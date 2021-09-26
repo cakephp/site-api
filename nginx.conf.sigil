@@ -1,7 +1,7 @@
 server {
     listen      [::]:80;
     listen      80;
-    server_name api4.cakephp.org;
+    server_name api.cakephp.org api4.cakephp.org www.api.cakephp.org;
 
     access_log /var/log/nginx/api.cakephp.org-access.log;
     error_log /var/log/nginx/api.cakephp.org-error.log;
