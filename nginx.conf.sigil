@@ -100,6 +100,10 @@ server {
     # Forwarding for different versions
     # This block has to be before the other 3.x versions so that 3.10 isn't
     # matched as 3.1
+    location ~ ^/4.next/?(.*)$ {
+        proxy_set_header Host "api-4.cakephp.org";
+        proxy_pass http://localhost:80/cakephp/4.next/$1;
+    }
     location ~ ^/(3\.9|3\.10|4\.[0-9])/?(.*)$ {
         proxy_set_header Host "api-4.cakephp.org";
         proxy_pass http://localhost:80/cakephp/$1/$2;
