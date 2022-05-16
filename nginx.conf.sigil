@@ -28,6 +28,7 @@ server {
 
     set $cake3_latest "3.10";
     set $cake4_latest "4.3";
+    set $cake5_latest "5.0";
     set $chronos_latest "2.x";
     set $elastic_search_latest "3.x";
     set $queue_latest "0.x";
@@ -86,6 +87,9 @@ server {
     }
     location ~ ^/4\.(x|latest)/?(.*)$ {
         return 303 https://api.cakephp.org/${cake4_latest}/$2;
+    }
+    location ~ ^/5\.(x|latest)/?(.*)$ {
+        return 303 https://api.cakephp.org/${cake5_latest}/$2;
     }
     location ~ ^/chronos/?$ {
         return 303 https://api.cakephp.org/chronos/${chronos_latest}/;
