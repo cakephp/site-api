@@ -28,6 +28,7 @@ server {
 
     set $cake3_latest "3.10";
     set $cake4_latest "4.3";
+    set $cake5_latest "5.0";
     set $chronos_latest "2.x";
     set $elastic_search_latest "3.x";
     set $queue_latest "0.x";
@@ -87,6 +88,9 @@ server {
     location ~ ^/4\.(x|latest)/?(.*)$ {
         return 303 https://api.cakephp.org/${cake4_latest}/$2;
     }
+    location ~ ^/5\.(x|latest)/?(.*)$ {
+        return 303 https://api.cakephp.org/${cake5_latest}/$2;
+    }
     location ~ ^/chronos/?$ {
         return 303 https://api.cakephp.org/chronos/${chronos_latest}/;
     }
@@ -104,7 +108,7 @@ server {
         proxy_set_header Host "api-4.cakephp.org";
         proxy_pass http://localhost:80/cakephp/4.next/$1;
     }
-    location ~ ^/(3\.\d+|4\.\d+)/?(.*)$ {
+    location ~ ^/(3\.\d+|4\.\d+||5\.\d+)/?(.*)$ {
         proxy_set_header Host "api-4.cakephp.org";
         proxy_pass http://localhost:80/cakephp/$1/$2;
     }
