@@ -108,7 +108,7 @@ server {
         proxy_set_header Host "api-4.cakephp.org";
         proxy_pass http://localhost:80/cakephp/4.next/$1;
     }
-    location ~ ^/(3\.\d+|4\.\d+||5\.\d+)/?(.*)$ {
+    location ~ ^/(3\.\d+|4\.\d+|5\.\d+)/?(.*)$ {
         proxy_set_header Host "api-4.cakephp.org";
         proxy_pass http://localhost:80/cakephp/$1/$2;
     }
