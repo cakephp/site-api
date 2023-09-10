@@ -60,7 +60,7 @@ server {
     }
 
     location ~ ^/$ {
-        rewrite ^ /${cake4_latest}/ permanent;
+        rewrite ^ /${cake5_latest}/ permanent;
     }
 
     # Add trailing slashes.
