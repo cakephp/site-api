@@ -137,11 +137,11 @@ server {
     }
 
     # authentication & authorization
-    location ~ ^/authentication/([2]\.x)/?(.*)$ {
+    location ~ ^/authentication/([23]\.x)/?(.*)$ {
         proxy_set_header Host "api-4.cakephp.org";
         proxy_pass http://localhost:80/authentication/$1/$2;
     }
-    location ~ ^/authorization/([2]\.x)/?(.*)$ {
+    location ~ ^/authorization/([23]\.x)/?(.*)$ {
         proxy_set_header Host "api-4.cakephp.org";
         proxy_pass http://localhost:80/authorization/$1/$2;
     }
@@ -152,17 +152,17 @@ server {
         proxy_pass http://localhost:80/chronos/1.x/$2;
     }
     # Chronos API docs 1.x and 2.x versions
-    location ~ ^/chronos/([12]\.x)/?(.*)$ {
+    location ~ ^/chronos/([123]\.x)/?(.*)$ {
         proxy_set_header Host "api-4.cakephp.org";
         proxy_pass http://localhost:80/chronos/$1/$2;
     }
     # elastic-search API docs 2.x, 3.x versions
-    location ~ ^/elastic-search/([23]\.x)/?(.*)$ {
+    location ~ ^/elastic-search/([234]\.x)/?(.*)$ {
         proxy_set_header Host "api-4.cakephp.org";
         proxy_pass http://localhost:80/elastic-search/$1/$2;
     }
     # queue
-    location ~ ^/queue/([0]\.x)/?(.*)$ {
+    location ~ ^/queue/([012]\.x)/?(.*)$ {
         proxy_set_header Host "api-4.cakephp.org";
         proxy_pass http://localhost:80/queue/$1/$2;
     }
