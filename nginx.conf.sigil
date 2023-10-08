@@ -29,11 +29,11 @@ server {
     set $cake3_latest "3.10";
     set $cake4_latest "4.4";
     set $cake5_latest "5.0";
-    set $authentication_latest "2.x";
-    set $authorization_latest "2.x";
-    set $chronos_latest "2.x";
-    set $elastic_search_latest "3.x";
-    set $queue_latest "0.x";
+    set $authentication_latest "3.x";
+    set $authorization_latest "3.x";
+    set $chronos_latest "3.x";
+    set $elastic_search_latest "4.x";
+    set $queue_latest "2.x";
 
     location ~ /\.ht {
         deny all;
@@ -162,7 +162,7 @@ server {
         proxy_pass http://localhost:80/elastic-search/$1/$2;
     }
     # queue
-    location ~ ^/queue/([012]\.x)/?(.*)$ {
+    location ~ ^/queue/([12]\.x)/?(.*)$ {
         proxy_set_header Host "api-4.cakephp.org";
         proxy_pass http://localhost:80/queue/$1/$2;
     }
