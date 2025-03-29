@@ -27,8 +27,8 @@ server {
     include {{ $.DOKKU_ROOT }}/{{ $.APP }}/nginx.conf.d/*.conf;
 
     set $cake3_latest "3.10";
-    set $cake4_latest "4.5";
-    set $cake5_latest "5.1";
+    set $cake4_latest "4.6";
+    set $cake5_latest "5.2";
     set $authentication_latest "3.x";
     set $authorization_latest "3.x";
     set $chronos_latest "3.x";
