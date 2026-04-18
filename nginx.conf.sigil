@@ -137,7 +137,7 @@ server {
     }
 
     # authentication & authorization
-    location ~ ^/authentication/([23]\.x)/?(.*)$ {
+    location ~ ^/authentication/([234]\.x)/?(.*)$ {
         proxy_set_header Host "api-4.cakephp.org";
         proxy_pass http://localhost:80/authentication/$1/$2;
     }
